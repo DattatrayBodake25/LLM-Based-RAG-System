@@ -6,12 +6,14 @@ This project implements a Retrieval-Augmented Generation (RAG) system using a La
 Streamlit Frontend: Provides an interface for user interaction.
 Flask Backend: Handles API requests, content scraping, and LLM integration.
 Large Language Model (LLM): Generates responses based on processed content.
+
 Features
 User Interaction: Users can input queries through a Streamlit-based frontend.
 Content Retrieval: Queries are used to fetch relevant articles from the internet.
 Content Processing: Scraped content is processed for LLM input.
 Response Generation: LLM generates answers based on the processed content.
 Conversational Memory (Bonus): Integration of tools like LangChain for conversational memory.
+
 Prerequisites
 Python 3.8 or above
 API Keys: For scraping and LLM integration (provide in .env file)
@@ -20,6 +22,7 @@ Setup Instructions
 
 Step 1: Clone the Repository
 git clone https://github.com/DattatrayBodake25/LLM-Based-RAG-System.git
+
 cd LLM-Based-RAG-System
 
 Step 2: Set Up a Virtual Environment
