@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import utils
 import os
 from utils import search_articles, concatenate_content, generate_answer
 
