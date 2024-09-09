@@ -8,61 +8,22 @@ FLASK_API_URL = "https://your-flask-api-url.onrender.com/query"
 if "show_main" not in st.session_state:
     st.session_state.show_main = False
 
+# Function to show the main content
 def show_main():
     st.session_state.show_main = True
 
 # Display the welcome screen if show_main is False
 if not st.session_state.show_main:
-    st.markdown(
-        """
-        <style>
-        .welcome {{
-            text-align: center;
-            padding: 50px;
-        }}
-        .welcome h1 {{
-            font-size: 3em;
-            color: #ffffff;
-        }}
-        .welcome p {{
-            font-size: 1.5em;
-            color: #e0e0e0;
-        }}
-        .button {{
-            display: block;
-            width: 200px;
-            margin: 30px auto;
-            padding: 10px;
-            background-color: #0056b3;
-            color: white;
-            text-align: center;
-            font-size: 1.2em;
-            border-radius: 5px;
-            cursor: pointer;
-        }}
-        .button:hover {{
-            background-color: #004494;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    st.title("Welcome to Your AI-Powered System")
+    st.write("Your AI assistant for quick and insightful information retrieval.")
 
-    st.markdown(
-        """
-        <div class="welcome">
-            <h1>Welcome to My AI-Powered System</h1>
-            <p>Your AI assistant for quick and insightful information retrieval.</p>
-            <div class="button" onclick="window.location.href = 'http://localhost:8501/?show_main=true';">Let's Start</div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    if st.button("Let's Start"):
+        show_main()
 
 # Show main content if show_main is True
 if st.session_state.show_main:
     st.markdown(
-        f"""
+        """
         <style>
         .stApp {{
             background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6));
@@ -112,6 +73,7 @@ if st.session_state.show_main:
     for chat in reversed(st.session_state.history):
         st.markdown(f"<div class='chatbox user-message'>You: {chat['query']}</div>", unsafe_allow_html=True)
         st.markdown(f"<div class='chatbox bot-message'>Bot: {chat['response']}</div>", unsafe_allow_html=True)
+
 
 
 
