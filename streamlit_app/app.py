@@ -1,9 +1,6 @@
 import streamlit as st
 import requests
 
-# Display balloons when the app starts
-st.balloons()
-
 # Set the URL for the Flask API (with the /query endpoint)
 FLASK_API_URL = "https://llm-based-rag-system.onrender.com/query"
 
